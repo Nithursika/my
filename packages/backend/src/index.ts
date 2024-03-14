@@ -31,6 +31,7 @@ import search from './plugins/search';
 import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
+import pagerduty from './plugins/pagerduty';
 
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
@@ -85,8 +86,10 @@ async function main() {
   const techdocsEnv = useHotMemoize(module, () => createEnv('techdocs'));
   const searchEnv = useHotMemoize(module, () => createEnv('search'));
   const appEnv = useHotMemoize(module, () => createEnv('app'));
+  const pagerdutyEnv = useHotMemoize(module, () => createEnv('pagerduty'));
 
   const apiRouter = Router();
+  apiRouter.use('/pagerduty', await pagerduty(pagerdutyEnv));
   apiRouter.use('/catalog', await catalog(catalogEnv));
   apiRouter.use('/scaffolder', await scaffolder(scaffolderEnv));
   apiRouter.use('/auth', await auth(authEnv));

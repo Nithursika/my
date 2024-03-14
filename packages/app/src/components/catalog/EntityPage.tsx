@@ -58,6 +58,13 @@ import {
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
 
+import {
+  isPluginApplicableToEntity as isPagerDutyAvailable,
+  EntityPagerDutyCard,
+} from '@pagerduty/backstage-plugin';
+
+
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -140,6 +147,22 @@ const overviewContent = (
   </Grid>
 );
 
+const pagerDutyPage = (
+  <Grid container spacing={3} alignItems="stretch">
+    <Grid item md={12}>
+      <EntityPagerDutyCard />
+    </Grid>
+    {/* <EntitySwitch>
+      <EntitySwitch.Case if={isPagerDutyAvailable}>
+        <Grid item md={12}>
+          <EntityPagerDutyCard />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch> */}
+  </Grid>
+)
+
+
 const serviceEntityPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
@@ -148,6 +171,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/ci-cd" title="CI/CD">
       {cicdContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/pagerduty" title="PagerDUTY">
+      {pagerDutyPage}
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/api" title="API">
@@ -188,6 +215,10 @@ const websiteEntityPage = (
       {cicdContent}
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/pagerduty" title="PagerDUTY">
+      {pagerDutyPage}
+    </EntityLayout.Route>
+
     <EntityLayout.Route path="/dependencies" title="Dependencies">
       <Grid container spacing={3} alignItems="stretch">
         <Grid item md={6}>
@@ -221,6 +252,11 @@ const defaultEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+
+    <EntityLayout.Route path="/pagerduty" title="PagerDUTY">
+      {pagerDutyPage}
+    </EntityLayout.Route>
+
   </EntityLayout>
 );
 

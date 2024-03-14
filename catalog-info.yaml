@@ -3,7 +3,9 @@ kind: Component
 metadata:
   name: my
   description: An example of a Backstage application.
-  
+  annotations:
+    pagerduty.com/integration-key: 4c280fa2a1094100d0767478390a85d6
+
   # Example for optional annotations
   # annotations:
   #   github.com/project-slug: backstage/backstage
