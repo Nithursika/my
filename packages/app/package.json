@@ -43,6 +43,7 @@
     "@material-ui/icons": "^4.9.1",
     "@pagerduty/backstage-plugin": "^0.9.3",
     "@pagerduty/backstage-plugin-common": "^0.1.1",
+    "@roadiehq/plugin-scaffolder-frontend-module-http-request-field": "^1.6.8",
     "history": "^5.0.0",
     "react": "^18.0.2",
     "react-dom": "^18.0.2",

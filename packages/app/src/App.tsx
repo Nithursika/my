@@ -36,6 +36,9 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { SignInProviderConfig, SignInPage } from '@backstage/core-components';
 
+import { ScaffolderFieldExtensions } from '@backstage/plugin-scaffolder-react';
+import { SelectFieldFromApiExtension } from '@roadiehq/plugin-scaffolder-frontend-module-http-request-field';
+
 const githubProvider: SignInProviderConfig = {
   id: 'github-auth-provider',
   title: 'GitHub',
@@ -92,7 +95,11 @@ const routes = (
         <ReportIssue />
       </TechDocsAddons>
     </Route>
-    <Route path="/create" element={<ScaffolderPage />} />
+    <Route path="/create" element={<ScaffolderPage />}>
+      <ScaffolderFieldExtensions>
+        <SelectFieldFromApiExtension />
+      </ScaffolderFieldExtensions>
+    </Route>
     <Route path="/api-docs" element={<ApiExplorerPage />} />
     <Route
       path="/tech-radar"

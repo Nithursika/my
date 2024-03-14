@@ -3,8 +3,6 @@ kind: Location
 metadata:
   name: example-templates-remote
   description: A collection of remotely available Backstage example templates
-  annotations:
-    pagerduty.com/integration-key: 4c280fa2a1094100d0767478390a85d6 #${INTEGRATION-KEY}
 
 spec:
   type: url

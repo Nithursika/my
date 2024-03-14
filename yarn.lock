@@ -5734,7 +5734,7 @@
   dependencies:
     "@babel/runtime" "^7.4.4"
 
-"@material-ui/lab@4.0.0-alpha.61":
+"@material-ui/lab@4.0.0-alpha.61", "@material-ui/lab@^4.0.0-alpha.45":
   version "4.0.0-alpha.61"
   resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-4.0.0-alpha.61.tgz#9bf8eb389c0c26c15e40933cc114d4ad85e3d978"
   integrity sha512-rSzm+XKiNUjKegj8bzt5+pygZeckNLOr+IjykH8sYdVk7dE9y2ZuUSofiMV2bJk3qU+JHwexmw+q0RyNZB9ugg==
@@ -7251,6 +7251,26 @@
     ajv-formats "^2.1.1"
     lodash "^4.17.21"
     lodash-es "^4.17.21"
+
+"@roadiehq/plugin-scaffolder-frontend-module-http-request-field@^1.6.8":
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@roadiehq/plugin-scaffolder-frontend-module-http-request-field/-/plugin-scaffolder-frontend-module-http-request-field-1.6.8.tgz#02d816bdc687af57e486276ef8ca3914e628926c"
+  integrity sha512-opgvAvIlbUTxbASoBgrchga44flVSW+GzCOu+4h48LeB1l7IDd0dFTeL3UU+0KfPUc65YhJIrwGm8yyE+FZzug==
+  dependencies:
+    "@backstage/core-components" "^0.14.0"
+    "@backstage/core-plugin-api" "^1.9.0"
+    "@backstage/plugin-scaffolder" "^1.18.0"
+    "@backstage/plugin-scaffolder-react" "^1.8.0"
+    "@backstage/theme" "^0.5.1"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "^4.0.0-alpha.45"
+    "@rjsf/core" "5.17.0"
+    "@rjsf/utils" "5.17.0"
+    lodash "^4.17.21"
+    nunjucks "^3.2.3"
+    react-use "^17.2.4"
+    zod "^3.19.1"
 
 "@rollup/plugin-commonjs@^25.0.0":
   version "25.0.7"
@@ -24807,7 +24827,7 @@ zod-to-json-schema@^3.20.4, zod-to-json-schema@^3.21.4:
   resolved "https://registry.yarnpkg.com/zod-to-json-schema/-/zod-to-json-schema-3.22.4.tgz#f8cc691f6043e9084375e85fb1f76ebafe253d70"
   integrity sha512-2Ed5dJ+n/O3cU383xSY28cuVi0BCQhF8nYqWU5paEpl7fVdqdAmiLdqLyfblbNdfOFwFfi/mqU4O1pwc60iBhQ==
 
-zod@^3.22.4:
+zod@^3.19.1, zod@^3.22.4:
   version "3.22.4"
   resolved "https://registry.yarnpkg.com/zod/-/zod-3.22.4.tgz#f31c3a9386f61b1f228af56faa9255e845cf3fff"
   integrity sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==

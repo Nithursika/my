@@ -86,6 +86,7 @@ catalog:
     #Setting up Software Templates
     - type: file
       target: ../../plugins/templates/all-templates.yaml # Backstage will expect the file to be in packages/backend/template.yaml
-
+    - type: file
+      target: ../../plugins/pagerduty-template/template.yaml
 pagerDuty:
   apiToken: ${PAGERDUTY_TOKEN}
