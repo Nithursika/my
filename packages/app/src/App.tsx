@@ -33,7 +33,7 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
-import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { githubAuthApiRef, bitbucketAuthApiRef } from '@backstage/core-plugin-api';
 import { SignInProviderConfig, SignInPage } from '@backstage/core-components';
 
 import { ScaffolderFieldExtensions } from '@backstage/plugin-scaffolder-react';
@@ -46,6 +46,13 @@ const githubProvider: SignInProviderConfig = {
   apiRef: githubAuthApiRef,
 };
 
+const bitbucketProvider: SignInProviderConfig = {
+  id: 'bitbucket-auth-provider',
+  title: 'Bitbucket',
+  message: 'Sign in using Bitbucket',
+  apiRef: bitbucketAuthApiRef,
+};
+
 const app = createApp({
   apis,
   components: {
@@ -53,7 +60,7 @@ const app = createApp({
       <SignInPage
         {...props}
         auto
-        provider={githubProvider}
+        providers={[githubProvider, bitbucketProvider]}
       />
     ),
   },
